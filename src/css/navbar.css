@@ -1,0 +1,26 @@
+
+/*==================================navbar=====================================*/
+
+.navbar ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0%;
+
+  border: solid blue 3px;
+}
+
+.navbar a{
+  color: #00ccff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 25px;
+}
+
+.navbar a:hover{
+  color: white;
+}
+

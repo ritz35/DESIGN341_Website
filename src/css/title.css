@@ -1,0 +1,18 @@
+.title {
+    width: 100vw;                /* Full width of the screen */
+    display: flex;               /* Flex container */
+    justify-content: center;     /* Horizontally center the content */
+    align-items: center;         /* Vertically center (optional) */
+    border: 3px solid red;
+    padding: 1rem 0;             /* Top and bottom padding */
+    box-sizing: border-box;      /* Include padding in width */
+}
+  
+.title_name {
+    height: 6em;
+}
+  
+  
+.title_name:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
