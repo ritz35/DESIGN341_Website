@@ -3,13 +3,41 @@
     display: grid;
     grid-template-rows: auto auto auto;
     /*this margin matches with the nav bar margin*/
-    margin-left: 25%;
+    margin-left: 20%;
+
+    width: 70%;
 }
 .div_cohort, .div_port, .div_contact{
     border: solid 3px purple;
-    height: 50vh
+    height: 50vh;
+
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
 }
-.div_cohort, .div_port, .div_contact:hover{
-    border: dotted 3px orange;
-    height: 50vh
+
+.div_cohort:hover, .div_port:hover, .div_contact:hover{
+    border: dotted 5px blue;
+}
+
+.background_video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.content_overlay{
+    position: absolute;
+    z-index: 1;
+    color: white;
+    padding: 11rem;
+    font-size: 2rem;
+}
+
+.link_pages{
+    
 }

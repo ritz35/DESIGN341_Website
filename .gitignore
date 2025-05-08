@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Richie adds
+# The placeholder videos
+*.mp4

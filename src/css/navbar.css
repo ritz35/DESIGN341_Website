@@ -3,13 +3,13 @@
 /*Css file for the component for the nav bar*/
 .div_navbar{
   display: grid;
-  grid-template-columns: 25% 1fr;
   grid-template-rows: auto auto auto auto;
 
   position: fixed;
   height: 100vh;
-  width: 100%;
 
+  border: solid blue 3px;
+  width: 100%;
 }
 
 .navbar ul{
@@ -19,8 +19,6 @@
   gap: 2rem;
   margin: 0;
   padding: 0%;
-
-  border: solid blue 3px;
 }
 
 .navbar a{

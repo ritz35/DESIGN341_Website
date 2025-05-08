@@ -73,5 +73,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-
+.link_pages{
+  text-decoration: none;
+  
+}
