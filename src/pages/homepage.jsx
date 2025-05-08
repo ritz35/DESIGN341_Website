@@ -8,7 +8,7 @@ function Homepage(){
             <Link className="link_pages" to="cohort">
             <div className="div_cohort">
                 <video autoPlay muted loop playsInline className="background_video">
-                    {/*<source src="video/test_video.mp4" type="video/mp4"/>*/}
+                    <source src="video/test_video.mp4" type="video/mp4"/>
                     your browser does not support the video tag
                 </video>
 
@@ -21,7 +21,7 @@ function Homepage(){
             <Link className="link_pages" to="portfolio">
                 <div className="div_port">
                 <video autoPlay muted loop playsInline className="background_video">
-                    {/*<source src="video/test_video2.mp4" type="video/mp4"/>*/}
+                    <source src="video/test_video2.mp4" type="video/mp4"/>
                     your browser does not support the video tag
                 </video>
 
@@ -33,7 +33,7 @@ function Homepage(){
             <Link className="link_pages" to="contacts">
                 <div className="div_contact">
                     <video autoPlay muted loop playsInline className="background_video">
-                        {/*<source src="video/test_video3.mp4" type="video/mp4"/>*/}
+                        <source src="video/test_video3.mp4" type="video/mp4"/>
                         your browser does not support the video tag
                     </video>
 

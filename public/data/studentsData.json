@@ -3,31 +3,36 @@
       "id": 1,
       "name": "Richie Saminn",
       "role": "Full Stack Developer",
-      "image": "/images/placeholder.webp"
+      "image": "/images/placeholder.webp",
+      "video": "/video/test_video.mp4"
     },
     {
       "id": 2,
       "name": "Senuja Weerasinghe",
       "role": "Backend Engineer",
-      "image": "/images/placeholder.webp"
+      "image": "/images/placeholder.webp",
+      "video": "/video/test_video.mp4"
     },
     {
       "id": 3,
       "name": "Stefan Smart",
       "role": "UX/UI Designer",
-      "image": "/images/placeholder.webp"
+      "image": "/images/placeholder.webp",
+      "video": "/video/test_video.mp4"
     },
     {
       "id": 4,
       "name": "Travers Blackwood",
       "role": "Mobile Developer",
-      "image": "/images/placeholder.webp"
+      "image": "/images/placeholder.webp",
+      "video": "/video/test_video.mp4"
     },
     {
       "id": 5,
       "name": "Yerin Ryoo",
       "role": "Frontend Developer",
-      "image": "/images/placeholder.webp"
+      "image": "/images/placeholder.webp",
+      "video": "/video/test_video.mp4"
     }
   ]
   
