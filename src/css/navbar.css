@@ -9,7 +9,7 @@
   height: 100vh;
 
   border: solid blue 3px;
-  width: 100%;
+  width: 20%;
 }
 
 .navbar ul{
@@ -31,5 +31,23 @@
 
 .navbar a:hover{
   color: white;
+}
+
+.link_pages {
+  color: #00bfff;
+  text-decoration: none;
+  display: block;
+  border: 3px solid transparent; /* or border-bottom if it's horizontal */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.link_pages:hover {
+  border: 3px dotted #00bfff;
+}
+
+/* Active (current page) */
+.link_pages.active {
+  border: 3px dotted #00bfff;
 }
 
