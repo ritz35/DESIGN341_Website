@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function Cohort(){
+function Contacts(){
 
 }
 
-export default Cohort
+export default Contacts

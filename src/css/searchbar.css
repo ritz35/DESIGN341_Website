@@ -1,0 +1,21 @@
+.searchbar{
+    width: 60%;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    outline: none;
+    transition: all 0.3s ease;
+}
+  
+.searchbar::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+  
+.searchbar:focus{
+    border-color: #00ccff;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
