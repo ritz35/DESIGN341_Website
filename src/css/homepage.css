@@ -1,0 +1,15 @@
+.homepage_wrapper{
+    border: solid 3px green;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    /*this margin matches with the nav bar margin*/
+    margin-left: 25%;
+}
+.div_cohort, .div_port, .div_contact{
+    border: solid 3px purple;
+    height: 50vh
+}
+.div_cohort, .div_port, .div_contact:hover{
+    border: dotted 3px orange;
+    height: 50vh
+}

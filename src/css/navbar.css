@@ -1,5 +1,16 @@
 
 /*==================================navbar=====================================*/
+/*Css file for the component for the nav bar*/
+.div_navbar{
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  grid-template-rows: auto auto auto auto;
+
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+
+}
 
 .navbar ul{
   list-style: none;

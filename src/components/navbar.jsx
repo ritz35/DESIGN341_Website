@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import '../css/navbar.css'
+import {Link} from 'react-router-dom'
 
 function Navbar(){
   return(
       <div className='div_navbar'>
         <nav className='navbar'>
           <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">STUDENT COHORT</a></li> {/*this needs a search function */}
-            <li><a href="#">PORTFOLIO</a></li> {/*this needs a video */}
-            <li><a href="#">CONTACT</a></li>
+            <li><Link to="/">HOME</Link></li>
+            <li><Link to="cohort">STUDENT COHORT</Link></li> {/*this needs a search function */}
+            <li><Link to="portfolio">PORTFOLIO</Link></li> {/*this needs a video */}
+            <li><Link to="contacts">CONTACT</Link> </li>
           </ul>
         </nav>
       </div>
