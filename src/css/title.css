@@ -1,7 +1,7 @@
 .title_wrapper{
     display: grid;
     grid-template-rows: auto auto;
-    border: 3px solid red;
+    /* border: 3px solid red; */
 }
 
 .title{
@@ -11,9 +11,14 @@
     align-items: center;         /* Vertically center (optional) */
     padding: 1rem 0;             /* Top and bottom padding */
     box-sizing: border-box;      /* Include padding in width */
+    margin-bottom: 2%
 }
-.asset_title_hollow{
 
+.asset_title_hollow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 .title_inner{
     position: relative;

@@ -17,7 +17,7 @@
 }
 
 .div_cohort:hover, .div_port:hover, .div_contact:hover{
-    border: dotted 5px blue;
+    border: dashed 5px #00bfff;
 }
 
 .background_video{

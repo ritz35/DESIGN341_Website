@@ -6,10 +6,14 @@
   grid-template-rows: auto auto auto auto;
 
   position: fixed;
-  height: 100vh;
+  height: 40vh;
 
-  border: solid blue 3px;
+  /* border: solid blue 3px; */
+  background-color: white;
   width: 20%;
+
+  padding-top: 2%;
+  text-align: center;
 }
 
 .navbar ul{
@@ -17,7 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 0;
+  margin: 0%;
   padding: 0%;
 }
 
@@ -43,11 +47,11 @@
 
 /* Hover effect */
 .link_pages:hover {
-  /* border: 3px dotted #00bfff; */
+  /* border: 3px dashed #00bfff; */
 }
 
 /* Active (current page) */
 .link_pages.active {
-  border: 3px dotted #00bfff;
+  border: 3px dashed #00C3FF;
 }
 
