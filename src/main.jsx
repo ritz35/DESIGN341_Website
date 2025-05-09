@@ -22,9 +22,9 @@ createRoot(document.getElementById('root')).render(
     <Navbar /> 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/cohort' element={<Cohort />} />
-        <Route path='/portfolio' element={<Portfolio />} />
-        <Route path='/contacts' element={<Contacts />} />
+        <Route path='/DESIGN341_Website/cohort' element={<Cohort />} />
+        <Route path='/DESIGN341_Website/portfolio' element={<Portfolio />} />
+        <Route path='/DESIGN341_Website/contacts' element={<Contacts />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
