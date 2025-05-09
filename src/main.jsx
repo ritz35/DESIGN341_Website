@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')).render(
     <Title /> 
     <Navbar /> 
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/DESIGN341_Website/home' element={<Home />} />
         <Route path='/DESIGN341_Website/cohort' element={<Cohort />} />
         <Route path='/DESIGN341_Website/portfolio' element={<Portfolio />} />
         <Route path='/DESIGN341_Website/contacts' element={<Contacts />} />

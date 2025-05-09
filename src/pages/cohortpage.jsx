@@ -6,7 +6,7 @@ function Cohort(){
     const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        fetch('/data/studentsData.json')
+        fetch('/DESIGN341_Website/data/studentsData.json')
             .then(response => response.json())
             .then(data => setStudents(data))
             .catch(error => console.error("error in cohort page loading the students data: ", error));

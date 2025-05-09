@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom'
 function Homepage(){
     return(
         <div className="homepage_wrapper">
-            <Link className="link_pages" to="cohort">
+            <Link className="link_pages" to="/DESIGN341_Website/cohort">
             <div className="div_cohort">
                 <video autoPlay muted loop playsInline className="background_video">
-                    <source src="video/test_video.mp4" type="video/mp4"/>
+                    <source src="/DESIGN341_Website/video/test_video.mp4" type="video/mp4"/>
                     your browser does not support the video tag
                 </video>
 
@@ -18,10 +18,10 @@ function Homepage(){
             </div>
             </Link>
 
-            <Link className="link_pages" to="portfolio">
+            <Link className="link_pages" to="/DESIGN341_Website/portfolio">
                 <div className="div_port">
                 <video autoPlay muted loop playsInline className="background_video">
-                    <source src="video/test_video2.mp4" type="video/mp4"/>
+                    <source src="/DESIGN341_Website/video/test_video2.mp4" type="video/mp4"/>
                     your browser does not support the video tag
                 </video>
 
@@ -30,10 +30,10 @@ function Homepage(){
                     </div>
                 </div>
             </Link>
-            <Link className="link_pages" to="contacts">
+            <Link className="link_pages" to="/DESIGN341_Website/contacts">
                 <div className="div_contact">
                     <video autoPlay muted loop playsInline className="background_video">
-                        <source src="video/test_video3.mp4" type="video/mp4"/>
+                        <source src="/DESIGN341_Website/video/test_video3.mp4" type="video/mp4"/>
                         your browser does not support the video tag
                     </video>
 

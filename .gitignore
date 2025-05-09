@@ -24,5 +24,5 @@ dist-ssr
 *.sw?
 
 # Richie adds
-# The placeholder videos
+#videos, too big for git
 *.mp4

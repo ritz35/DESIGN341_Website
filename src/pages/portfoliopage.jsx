@@ -5,7 +5,7 @@ function Portfolio() {
     const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        fetch('/data/studentsData.json')
+        fetch('/DESIGN341_Website/data/studentsData.json')
             .then(response => response.json())
             .then(data => setStudents(data))
             .catch(error => console.error("Error loading student data:", error));
