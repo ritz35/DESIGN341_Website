@@ -1,18 +1,57 @@
+.title_wrapper{
+    display: grid;
+    grid-template-rows: auto auto;
+    border: 3px solid red;
+}
+
 .title {
-    width: 100vw;                /* Full width of the screen */
+    width: 100vw;             /*Full width of the screen */
     display: flex;               /* Flex container */
     justify-content: center;     /* Horizontally center the content */
     align-items: center;         /* Vertically center (optional) */
-    border: 3px solid red;
     padding: 1rem 0;             /* Top and bottom padding */
     box-sizing: border-box;      /* Include padding in width */
 }
+
+.title_inner{
+    position: relative;
+    display: inline-block;
+}
+
+.asset_blueglobe{
+    position: absolute;
+    /* border: 3px solid orange; */
+    margin-top: 1%;
+    margin-left: 24%;
+    width: 6vw;
+    z-index: 0;
+    pointer-events: none;
+
+    animation: spin 10s linear infinite; /* <== this spins it */
+}
+/*getting the globe to spin*/
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.asset_bottombar{
+    /* border:3px purple solid; */
+    margin-left: 20%;
+    margin-right: 20%;
+}
   
-.title_name {
-    height: 6em;
+.title_name{
+    height: 7vw;
+    position: relative;
+    z-index: 1;
 }
   
   
-.title_name:hover {
+.title_name:hover{
     filter: drop-shadow(0 0 2em #646cffaa);
 }

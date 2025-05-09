@@ -1,5 +1,4 @@
 /*The css file for the whole website*/
-
 :root {
   font-family: 'Space Grotesk Variable', sans-serif;
   line-height: 1.5;
@@ -8,6 +7,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* the background image grid*/
-  background-image: url('../assets/tiny-grid.png'), url('../assets/blue_globe.svg');
+  background-image: url('../assets/background2.svg');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -33,7 +33,7 @@ a {
 }
 /*hover of the anchor tag, it works with the title*/
 a:hover {
-  color: #535bf2;
+  /* color: #535bf2; */
 }
 
 body {
@@ -59,7 +59,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  /* border-color: #646cff; */
 }
 button:focus,
 button:focus-visible {

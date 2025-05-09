@@ -43,7 +43,7 @@
 
 /* Hover effect */
 .link_pages:hover {
-  border: 3px dotted #00bfff;
+  /* border: 3px dotted #00bfff; */
 }
 
 /* Active (current page) */
