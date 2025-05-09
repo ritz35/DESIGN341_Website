@@ -4,7 +4,7 @@
     border: 3px solid red;
 }
 
-.title {
+.title{
     width: 100vw;             /*Full width of the screen */
     display: flex;               /* Flex container */
     justify-content: center;     /* Horizontally center the content */
@@ -12,7 +12,9 @@
     padding: 1rem 0;             /* Top and bottom padding */
     box-sizing: border-box;      /* Include padding in width */
 }
+.asset_title_hollow{
 
+}
 .title_inner{
     position: relative;
     display: inline-block;
@@ -44,8 +46,8 @@
     margin-left: 20%;
     margin-right: 20%;
 }
-  
-.title_name{
+
+.asset_title{
     height: 7vw;
     position: relative;
     z-index: 1;

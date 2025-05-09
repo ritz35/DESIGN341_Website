@@ -2,6 +2,7 @@ import { useState } from 'react'
 import titleLogoWhite from '../assets/title_white.svg'
 import bottombar from '../assets/bottombar_blue.svg'
 import blue_globe from '../assets/blue_globe.svg'
+import title_hollow from '../assets/title_hollowed.svg'
 import '../css/title.css'
 
 function Title(){
@@ -10,7 +11,8 @@ function Title(){
             <div className='title'>
                 <div className='title_inner'>
                     <img src={blue_globe} className='asset_blueglobe'/>
-                    <img src={titleLogoWhite} className='title_name'/>
+                    <img src={titleLogoWhite} className='asset_title'/>
+                    <img src={title_hollow} className='asset_title_hollow'/>
                 </div>
             </div>
             <div className='asset_bottombar'>
