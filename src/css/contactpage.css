@@ -1,0 +1,65 @@
+.contact_wrapper {
+    margin-left: 21%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.4); /* Optional background */
+    border: 3px solid green;
+  }
+  
+  .contact_card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+  }
+  
+  .contact_card h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact_form input,
+  .contact_form textarea {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .contact_form input::placeholder,
+  .contact_form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .contact_form button {
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: #00ccff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .contact_form button:hover {
+    background-color: #0099cc;
+  }
+  
