@@ -5,8 +5,8 @@ import '@fontsource-variable/space-grotesk';
 import './css/index.css'
 import Title from './components/title.jsx'
 import Navbar from './components/navbar.jsx'
-import Background from './components/background.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Background from './components/background.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/homepage.jsx'
 import Cohort from './pages/cohortpage.jsx'
@@ -15,9 +15,11 @@ import Contacts from './pages/contactspage.jsx'
 
 
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    <Background />
     <Title /> 
     <Navbar /> 
       <Routes>

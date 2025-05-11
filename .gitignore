@@ -25,4 +25,6 @@ dist-ssr
 
 # Richie adds
 #videos, too big for git
-*.mp4
+test_video.mp4
+test_video2.mp4
+test_video3.mp4
