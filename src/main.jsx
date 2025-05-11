@@ -23,6 +23,7 @@ createRoot(document.getElementById('root')).render(
     <Title /> 
     <Navbar /> 
       <Routes>
+        <Route path ='/DESIGN341_Website/' element={<Home/>} />
         <Route path='/DESIGN341_Website/home' element={<Home />} />
         <Route path='/DESIGN341_Website/cohort' element={<Cohort />} />
         <Route path='/DESIGN341_Website/portfolio' element={<Portfolio />} />
