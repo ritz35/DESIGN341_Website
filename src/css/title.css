@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: -1;
 }
 .title_inner{
     position: relative;
@@ -51,14 +51,11 @@
     margin-left: 20%;
     margin-right: 20%;
 }
-
 .asset_title{
     height: 7vw;
     position: relative;
     z-index: 1;
 }
-  
-  
 .title_name:hover{
     filter: drop-shadow(0 0 2em #00C3FF);
 }
