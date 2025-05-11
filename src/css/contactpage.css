@@ -1,10 +1,10 @@
 .contact_wrapper {
-    margin-left: 21%;
+    margin-left: 10%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem;
+    padding: 1vh;
     background: rgba(0, 0, 0, 0.4); /* Optional background */
     /* border: 3px solid green; */
   }
