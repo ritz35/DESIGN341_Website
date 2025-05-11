@@ -1,14 +1,18 @@
 import { useState } from "react";
 import '../css/homepage.css'
 import {Link} from 'react-router-dom'
+import fb_city from '../assets/city.svg'
+import fb_galaxy from '../assets/galaxy.svg'
+import fb_planet from '../assets/planet.svg'
+
 
 function Homepage(){
     return(
         <div className="homepage_wrapper">
             <Link className="link_pages" to="/DESIGN341_Website/cohort">
             <div className="div_cohort">
-                <video autoPlay muted loop playsInline className="background_video">
-                    <source src="/DESIGN341_Website/video/test_video.mp4" type="video/mp4"/>
+                <video autoPlay muted loop playsInline poster={fb_city} className="background_video">
+                    {/* <source src="/DESIGN341_Website/video/test_video.mp4" type="video/mp4"/> */}
                     your browser does not support the video tag
                 </video>
 
@@ -20,8 +24,8 @@ function Homepage(){
 
             <Link className="link_pages" to="/DESIGN341_Website/portfolio">
                 <div className="div_port">
-                <video autoPlay muted loop playsInline className="background_video">
-                    <source src="/DESIGN341_Website/video/test_video2.mp4" type="video/mp4"/>
+                <video autoPlay muted loop playsInline poster={fb_planet} className="background_video">
+                    {/* <source src="/DESIGN341_Website/video/test_video2.mp4" type="video/mp4"/> */}
                     your browser does not support the video tag
                 </video>
 
@@ -32,8 +36,8 @@ function Homepage(){
             </Link>
             <Link className="link_pages" to="/DESIGN341_Website/contacts">
                 <div className="div_contact">
-                    <video autoPlay muted loop playsInline className="background_video">
-                        <source src="/DESIGN341_Website/video/test_video3.mp4" type="video/mp4"/>
+                    <video autoPlay muted loop playsInline poster={fb_galaxy} className="background_video">
+                        {/* <source src="/DESIGN341_Website/video/test_video3.mp4" type="video/mp4"/> */}
                         your browser does not support the video tag
                     </video>
 
