@@ -2,7 +2,7 @@ import { useState } from 'react'
 import titleLogoWhite from '../assets/title_white.svg'
 import bottombar from '../assets/bottombar_blue.svg'
 import blue_globe from '../assets/blue_globe.svg'
-import title_hollow from '../assets/hollowed_title2.svg'
+import title_hollow from '../assets/hollowed_v2.svg'
 import '../css/title.css'
 
 function Title(){
