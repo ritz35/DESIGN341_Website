@@ -5,15 +5,15 @@
     /*this margin matches with the nav bar margin*/
     margin-left: 20%;
 
-    width: 70%;
+    width: 60%;
 }
 .div_cohort, .div_port, .div_contact{
     /* border: solid 3px purple; */
-    height: 50vh;
 
     position: relative;
-    height: 75vh;
+    height: 50vh;
     overflow: hidden;
+    border: 3px solid white;
 }
 
 .div_cohort:hover, .div_port:hover, .div_contact:hover{
@@ -34,6 +34,6 @@
     position: absolute;
     z-index: 1;
     color: white;
-    padding: 11rem;
+    padding: 8rem;
     font-size: 2rem;
 }
