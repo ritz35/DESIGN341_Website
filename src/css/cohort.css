@@ -1,3 +1,4 @@
+/*wrapping the whole content*/
 .cohort_wrapper{
     margin-left: 21%;
     padding-top: 2%;
@@ -5,16 +6,30 @@
     /* border: 3px solid green; */
 }
 
+/*wraps the whole heading*/
 .cohort_heading{
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 5rem;
 }
 
+.div_searchbar {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+    text-align: left;
+    margin-left: 10rem;
+}
+
+/*wraps the all the student cards*/
 .cohort_grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10rem;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 2rem 0;
     justify-items: center;
     width: 100%;
     /* border: 3px solid purple; */
@@ -25,9 +40,12 @@
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 1rem;
+    
     padding: 1.5rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
+
+
     text-align: center;
     color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -46,4 +64,181 @@
     border-radius: 0.75rem;
     margin-bottom: 1rem;
 }
+
+/* XS phones*/
+@media (max-width: 480px) {
+
+    .cohort_grid{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .cohort_wrapper {
+        margin-left: 30%;
+        margin-right: 5%;
+    }
+
+    .cohort_heading{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .div_searchbar{
+        margin-left: 0;
+    }
+
+    .div_searchbar input{
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .student_card{
+        max-width: 200px;
+    }
+    
+    .cohort_heading h1 {
+        font-size: 2rem;
+    }
+}
+
+/*S phones/tablets*/
+@media (max-width: 600px){
+    .cohort_grid{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .cohort_wrapper {
+        margin-left: 30%;
+        margin-right: 5%;
+    }
+
+    .cohort_heading{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .div_searchbar{
+        margin-left: 0;
+    }
+
+    .div_searchbar input{
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .student_card{
+        max-width: 200px;
+    }
+    
+    .cohort_heading h1 {
+        font-size: 2rem;
+    }
+}
+/* MD: tablets */
+@media (max-width: 768px){ 
+        .cohort_grid{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .cohort_wrapper {
+        margin-left: 30%;
+        margin-right: 5%;
+    }
+
+    .cohort_heading{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .div_searchbar{
+        margin-left: 0;
+    }
+
+    .div_searchbar input{
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .student_card{
+        max-width: 200px;
+    }
+    
+    .cohort_heading h1 {
+        font-size: 2rem;
+    }
+}
+
+/* LG: small desktops */
+@media (max-width: 992px){
+        .cohort_grid{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .cohort_wrapper {
+        margin-left: 30%;
+        margin-right: 5%;
+    }
+
+    .cohort_heading{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .div_searchbar{
+        margin-left: 0;
+    }
+
+    .div_searchbar input{
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .student_card{
+        max-width: 200px;
+    }
+    
+    .cohort_heading h1 {
+        font-size: 2rem;
+    }
+}
+
+/* XL: large desktops */
+@media (max-width: 1200px){
+        .cohort_grid{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .cohort_wrapper {
+        margin-left: 30%;
+        margin-right: 5%;
+    }
+
+    .cohort_heading{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .div_searchbar{
+        margin-left: 0;
+    }
+
+    .div_searchbar input{
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .student_card{
+        max-width: 200px;
+    }
+    
+    .cohort_heading h1 {
+        font-size: 2rem;
+    }
+}
+
+
   

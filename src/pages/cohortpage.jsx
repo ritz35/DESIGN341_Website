@@ -15,20 +15,21 @@ function Cohort(){
     return(
         <div className="cohort_wrapper">
             <div className="cohort_heading">
-                <h1>STUDENT COHORT</h1>
+                <h1 className="cohort_title">STUDENT COHORT</h1>
                 <div className="div_searchbar">
+                    <h2>Search:</h2>
                     <Searchbar />
                 </div>
+            </div>
 
-                <div className="cohort_grid">
-                    {students.map((student) =>(
-                        <div className="student_card" key={student.id}>
-                            <img src={student.image} alt={student.name} className="student_image" />
-                            <h2>{student.name}</h2>
-                            <h3>{student.role}</h3>
-                        </div>
-                    ))}
-                </div>
+            <div className="cohort_grid">
+                {students.map((student) =>(
+                    <div className="student_card" key={student.id}>
+                        <img src={student.image} alt={student.name} className="student_image" />
+                        <h2>{student.name}</h2>
+                        <h3>{student.role}</h3>
+                    </div>
+                ))}
             </div>
         </div>
     )
