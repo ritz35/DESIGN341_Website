@@ -1,9 +1,8 @@
-
 .div_navbar{
   display: grid;
   grid-template-rows: auto auto auto auto;
   position: fixed;
-  height: 50vh;
+  height: 60vh;
 
 
   /*styling the background of the whole navbar*/
@@ -18,8 +17,13 @@
 
   /*adds rounded corners */
   border-radius: 10px;
-}
 
+  /*hover css*/
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 .navbar ul{
   /* border: 3px solid red; */
   list-style: none;
@@ -60,4 +64,36 @@
 .link_pages.active {
   border: 3px dashed #00C3FF;
 }
+
+
+/*this is to show the hover animation but it wraps the whole navebar*/
+.navbar_wrapper{
+  position: relative;
+  display: inline-block;
+}
+
+.nav_image{
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 60vh;
+  position: absolute;
+
+  transition: filter 0.3s ease;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar_wrapper:hover .div_navbar{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.navbar_wrapper:hover .nav_image{
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+
 
