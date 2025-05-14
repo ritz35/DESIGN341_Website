@@ -5,4 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/DESIGN341_Website/',
   plugins: [react()],
+  server: {host: true}
 })

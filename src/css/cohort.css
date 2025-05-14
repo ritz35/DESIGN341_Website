@@ -1,244 +1,83 @@
-/*wrapping the whole content*/
-.cohort_wrapper{
-    margin-left: 21%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    /* border: 3px solid green; */
+/* WRAPPER: centers and pads everything */
+.cohort_wrapper {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/*wraps the whole heading*/
-.cohort_heading{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
-    margin-left: 5rem;
+/* HEADING: flex layout for title + searchbar */
+.cohort_heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* SEARCHBAR */
 .div_searchbar {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 100px;
-    text-align: left;
-    margin-left: 10rem;
+  flex-grow: 1;
+  min-width: 200px;
 }
 
-/*wraps the all the student cards*/
-.cohort_grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem 0;
-    justify-items: center;
-    width: 100%;
-    /* border: 3px solid purple; */
+.div_searchbar input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
-  
-.student_card{
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 1rem;
-    
+
+/* GRID: responsive grid layout */
+.cohort_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* STUDENT CARD */
+.student_card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.student_card:hover {
+  transform: translateY(-5px);
+  border-color: #00ccff;
+}
+
+.student_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* TYPOGRAPHY ADJUSTMENT */
+.cohort_heading h1 {
+  font-size: 2.5rem;
+}
+
+/* MEDIA QUERIES (only where needed) */
+@media (max-width: 768px) {
+  .cohort_heading {
+    margin-left: 20%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cohort_heading h1 {
+    font-size: 2rem;
+  }
+
+  .student_card {
     padding: 1.5rem;
-    width: 100%;
-    max-width: 300px;
-
-
-    text-align: center;
-    color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+  }
 }
-  
-.student_card:hover{
-    transform: translateY(-5px);
-    border-color: #00ccff;
-}
-  
-.student_image{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-/* XS phones*/
-@media (max-width: 480px) {
-
-    .cohort_grid{
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .cohort_wrapper {
-        margin-left: 30%;
-        margin-right: 5%;
-    }
-
-    .cohort_heading{
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1rem;
-    }
-    .div_searchbar{
-        margin-left: 0;
-    }
-
-    .div_searchbar input{
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    .student_card{
-        max-width: 200px;
-    }
-    
-    .cohort_heading h1 {
-        font-size: 2rem;
-    }
-}
-
-/*S phones/tablets*/
-@media (max-width: 600px){
-    .cohort_grid{
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .cohort_wrapper {
-        margin-left: 30%;
-        margin-right: 5%;
-    }
-
-    .cohort_heading{
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1rem;
-    }
-    .div_searchbar{
-        margin-left: 0;
-    }
-
-    .div_searchbar input{
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    .student_card{
-        max-width: 200px;
-    }
-    
-    .cohort_heading h1 {
-        font-size: 2rem;
-    }
-}
-/* MD: tablets */
-@media (max-width: 768px){ 
-        .cohort_grid{
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .cohort_wrapper {
-        margin-left: 30%;
-        margin-right: 5%;
-    }
-
-    .cohort_heading{
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1rem;
-    }
-    .div_searchbar{
-        margin-left: 0;
-    }
-
-    .div_searchbar input{
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    .student_card{
-        max-width: 200px;
-    }
-    
-    .cohort_heading h1 {
-        font-size: 2rem;
-    }
-}
-
-/* LG: small desktops */
-@media (max-width: 992px){
-        .cohort_grid{
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .cohort_wrapper {
-        margin-left: 30%;
-        margin-right: 5%;
-    }
-
-    .cohort_heading{
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1rem;
-    }
-    .div_searchbar{
-        margin-left: 0;
-    }
-
-    .div_searchbar input{
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    .student_card{
-        max-width: 200px;
-    }
-    
-    .cohort_heading h1 {
-        font-size: 2rem;
-    }
-}
-
-/* XL: large desktops */
-@media (max-width: 1200px){
-        .cohort_grid{
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .cohort_wrapper {
-        margin-left: 30%;
-        margin-right: 5%;
-    }
-
-    .cohort_heading{
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1rem;
-    }
-    .div_searchbar{
-        margin-left: 0;
-    }
-
-    .div_searchbar input{
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
-    .student_card{
-        max-width: 200px;
-    }
-    
-    .cohort_heading h1 {
-        font-size: 2rem;
-    }
-}
-
-
-  
