@@ -4,7 +4,6 @@
   position: fixed;
   height: 60vh;
 
-
   /*styling the background of the whole navbar*/
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -73,11 +72,13 @@
 }
 
 .nav_image{
-  top: 0;
-  left: 0;
   z-index: 2;
-  height: 60vh;
-  position: absolute;
+  position: fixed;
+
+  width: 8vw;          /* Responsive width */
+  max-width: 80px;     /* Don't get too big */
+  min-width: 32px;     /* Don't get too small */
+  height: auto;        /* Maintain aspect ratio */
 
   transition: filter 0.3s ease;
   transform: translateX(0);
@@ -94,6 +95,34 @@
   opacity: 0;
   transform: translateX(-50px);
 }
+@media (max-width: 768px) {
+  .nav_image {
+    width: 12vw;
+  }
+
+  .div_navbar {
+    width: 40%;
+  }
+
+  .navbar a {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav_image {
+    width: 16vw;
+  }
+
+  .div_navbar {
+    width: 60%;
+  }
+
+  .navbar a {
+    font-size: 5vw;
+  }
+}
+
 
 
 
