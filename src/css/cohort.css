@@ -13,6 +13,7 @@
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  margin-left: 2rem;
 }
 
 /* SEARCHBAR */
@@ -45,6 +46,7 @@
   text-align: center;
   transition: transform 0.3s ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-left: 2rem;
 }
 
 .student_card:hover {
@@ -66,18 +68,84 @@
 }
 
 /* MEDIA QUERIES (only where needed) */
-@media (max-width: 768px) {
+@media(max-width: 1600px) {
+  .student_card{
+    border: 3px solid orange;
+  }
+  .cohort_heading{
+    border: 3px solid orange;
+    margin-left: 20%;
+  }
+  .cohort_grid{
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin-left: 17%;
+    margin-right: 20%;
+  }
+  .div_searchbar input{
+    width: 50%;
+  }
+}
+@media(max-width: 1200px){
+  .student_card{
+    border: 3px solid magenta;
+  }
+  .cohort_heading{
+    margin-left: 20%;
+    border: 3px solid magenta;
+  }
+  .cohort_grid{
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin-left: 17%;
+    margin-right: 20%;
+  }
+  .div_searchbar input{
+    width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
   .cohort_heading {
     margin-left: 20%;
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .cohort_heading h1 {
-    font-size: 2rem;
+  .cohort_grid{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
-  .student_card {
-    padding: 1.5rem;
+  .student_card{
+    border: 3px solid green;
+    width: 200px;
+    margin-left: 40%;
   }
+    .cohort_heading{
+    border: 3px solid green;
+  }
+}
+
+@media(max-width: 600px) {
+    .student_card{
+    border: 3px solid blue;
+    width: 200px;
+    margin-left: 20%;
+  }
+  .cohort_heading{
+    border: 3px solid blue;
+  }
+
+  .cohort_grid{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .student_card{
+    border: 3px solid red;
+    width: 200px;
+    margin-left: 20%;
+  }
+  .cohort_heading{
+    border: 3px solid red;
+  }
+  
 }

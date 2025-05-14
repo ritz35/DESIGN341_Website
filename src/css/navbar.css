@@ -32,7 +32,6 @@
   margin: 0%;
   padding: 0%;
 }
-
 .navbar a{
   /* border: 3px solid grey; */
   color: white;
@@ -41,11 +40,9 @@
   transition: color 0.3s;
   font-size: 2vw;
 }
-
 .navbar a:hover{
   color: #00ccff;
 }
-
 .link_pages {
   color: #00bfff;
   text-decoration: none;
@@ -53,32 +50,28 @@
   border: 3px solid transparent; /* or border-bottom if it's horizontal */
   transition: all 0.3s ease;
 }
-
 /* Hover effect */
 .link_pages:hover {
   /* border: 3px dashed #00bfff; */
 }
-
 /* Active (current page) */
 .link_pages.active {
   border: 3px dashed #00C3FF;
 }
-
-
 /*this is to show the hover animation but it wraps the whole navebar*/
 .navbar_wrapper{
   position: relative;
   display: inline-block;
 }
-
 .nav_image{
   z-index: 2;
   position: fixed;
+  height: 60vh;
 
-  width: 8vw;          /* Responsive width */
-  max-width: 80px;     /* Don't get too big */
-  min-width: 32px;     /* Don't get too small */
-  height: auto;        /* Maintain aspect ratio */
+  /* width: 8vw;         
+  max-width: 80px;     
+  min-width: 32px;     
+  height: auto;         */
 
   transition: filter 0.3s ease;
   transform: translateX(0);
@@ -97,30 +90,28 @@
 }
 @media (max-width: 768px) {
   .nav_image {
-    width: 12vw;
+    /* border: 3px green solid; */
+    width: 50px;
+    height: 30vh;
   }
 
   .div_navbar {
-    width: 40%;
-  }
-
-  .navbar a {
-    font-size: 4vw;
+    height: 25vh;
   }
 }
 
 @media (max-width: 480px) {
   .nav_image {
-    width: 16vw;
+    border: 3px purple solid;
+    height: 20vh;
+    width: 30px;
   }
 
   .div_navbar {
-    width: 60%;
+    height: 20vh;
   }
 
-  .navbar a {
-    font-size: 5vw;
-  }
+  
 }
 
 
