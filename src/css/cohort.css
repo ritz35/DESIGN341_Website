@@ -47,6 +47,7 @@
   transition: transform 0.3s ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin-left: 2rem;
+  z-index: 0;
 }
 
 .student_card:hover {
@@ -66,6 +67,53 @@
 .cohort_heading h1 {
   font-size: 2.5rem;
 }
+
+/*css for student pop up*/
+.student_popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 10px;
+  padding: 2rem;
+  z-index: 1000;
+  color: white;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  pointer-events: auto;
+}
+
+.popup_content{
+  pointer-events: auto;
+}
+
+.popup_image{
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.view_profile_button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #00ccff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.view_profile_button:hover {
+  background: #009ec4;
+}
+
+
 
 /* MEDIA QUERIES (only where needed) */
 @media(max-width: 1600px) {
