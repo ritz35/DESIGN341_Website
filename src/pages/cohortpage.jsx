@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../components/seachbar"
 import '../css/cohort.css'
+import exitbutton from "../assets/exit_button.svg"
 
 function Cohort(){
     const [students, setStudents] = useState([]);
@@ -57,6 +58,11 @@ function Cohort(){
                 <div className="student_popup"
                     onMouseEnter={() => handleMouseEnter(student)}
                     onMouseLeave={handleMouseLeave}>
+                        
+                    <button className="popup_close_button" onClick={() => setHoveredStudent(null)}>
+                        X
+                    </button>
+
                     <div className="popup_content">
                         <img src={hoveredStudent.image} alt={hoveredStudent.name} className="popup_image"/>
                         <h1>{hoveredStudent.name}</h1>

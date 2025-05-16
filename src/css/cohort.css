@@ -113,6 +113,24 @@
   background: #009ec4;
 }
 
+.popup_close_button{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  transition: color 0.2s ease;
+}
+
+.popup_close_button:hover {
+  color: #3ec7f4
+}
+
+
 
 
 /* MEDIA QUERIES (only where needed) */
