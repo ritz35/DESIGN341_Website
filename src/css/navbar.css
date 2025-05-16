@@ -41,10 +41,10 @@
   font-size: 2vw;
 }
 .navbar a:hover{
-  color: #00ccff;
+  color: #3ec7f4;
 }
 .link_pages {
-  color: #00bfff;
+  color: #3ec7f4;
   text-decoration: none;
   display: block;
   border: 3px solid transparent; /* or border-bottom if it's horizontal */
@@ -56,7 +56,7 @@
 }
 /* Active (current page) */
 .link_pages.active {
-  border: 3px dashed #00C3FF;
+  border: 3px dashed #3ec7f4;
 }
 /*this is to show the hover animation but it wraps the whole navebar*/
 .navbar_wrapper{

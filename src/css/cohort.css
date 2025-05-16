@@ -52,7 +52,7 @@
 
 .student_card:hover {
   transform: translateY(-5px);
-  border-color: #00ccff;
+  border-color: #3ec7f4;
 }
 
 .student_image {
@@ -101,7 +101,7 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background: #00ccff;
+  background: #3ec7f4;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -109,6 +109,7 @@
   transition: background 0.3s;
 }
 
+/*makes it darker*/
 .view_profile_button:hover {
   background: #009ec4;
 }
@@ -127,7 +128,7 @@
 }
 
 .popup_close_button:hover {
-  color: #3ec7f4
+  color: #3ec7f4;
 }
 
 

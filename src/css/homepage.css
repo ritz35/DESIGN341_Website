@@ -22,7 +22,7 @@
 }
 
 .div_cohort:hover, .div_port:hover, .div_contact:hover{
-    border: dashed 5px #00bfff;
+    border: dashed 5px #3ec7f4;
     transform: scale(1.03);
 }
 

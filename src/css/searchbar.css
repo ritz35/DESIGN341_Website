@@ -16,6 +16,6 @@
 }
   
 .searchbar:focus{
-    border-color: #00ccff;
+    border-color: #3ec7f4;
     box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
 }
