@@ -1,0 +1,39 @@
+/* studentpages.css */
+.studentpage_wrapper {
+  padding: 2rem;
+  min-height: 100vh;
+  border: 3px dashed white;
+  margin-left: 20%;
+  margin-right: 20%;
+  align-items: center;
+}
+
+.studentpage_heading {
+  text-align: center;
+}
+
+.studentpage_title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.studentpage_subheading h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.studentpage_image img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.studentpage_bio p, .studentpage_pdesc p{
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1rem auto;
+  line-height: 1.6;
+  text-align: center;
+}
+

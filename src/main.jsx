@@ -12,6 +12,7 @@ import Home from './pages/homepage.jsx'
 import Cohort from './pages/cohortpage.jsx'
 import Portfolio from './pages/portfoliopage.jsx'
 import Contacts from './pages/contactspage.jsx'
+import Studentpages from './pages/studentpages.jsx';
 
 
 
@@ -23,9 +24,10 @@ createRoot(document.getElementById('root')).render(
     <Title /> 
     <Navbar /> 
       <Routes>
-        <Route path ='/DESIGN341_Website/' element={<Home/>} />
+        <Route path='/DESIGN341_Website/' element={<Home/>} />
         <Route path='/DESIGN341_Website/home' element={<Home />} />
         <Route path='/DESIGN341_Website/cohort' element={<Cohort />} />
+        <Route path="/DESIGN341_Website/student/:id" element={<Studentpages />} />
         <Route path='/DESIGN341_Website/portfolio' element={<Portfolio />} />
         <Route path='/DESIGN341_Website/contacts' element={<Contacts />} />
       </Routes>
