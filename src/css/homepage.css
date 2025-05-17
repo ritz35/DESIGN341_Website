@@ -45,3 +45,12 @@
     font-size: clamp(10px, 2vw, 20px);
     max-width: 50%;
 }
+
+.intro_wrapper{
+    border: 3px solid #3ec7f4;
+    padding: 10%;
+    backdrop-filter: blur(5px);
+}
+.hp_para{
+    margin-bottom: 5%;
+}
