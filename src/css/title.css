@@ -60,3 +60,23 @@
 .title_name:hover{
     filter: drop-shadow(0 0 2em #00C3FF);
 }
+
+.asset_tagline {
+    margin: 0;
+    width: 100%;
+    max-width: 600px; /* Limit max size */
+    height: auto;     /* Keep aspect ratio */
+}
+.div_tagline {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 5vh;
+    margin-left: 20%;
+}
+@media (max-width: 768px) {
+    .asset_tagline {
+        max-width: 250px;
+        margin-bottom: 1vh;
+    }
+}
+
