@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom'
 import fb_city from '../assets/city.svg'
 import fb_galaxy from '../assets/galaxy.svg'
 import fb_planet from '../assets/planet.svg'
+import rocket_asset from '../assets/Rocket.png'
+import satel_asset from '../assets/Satellite.png'
+import ship_asset from '../assets/Ship.png'
 
 
 function Homepage(){
@@ -39,10 +42,10 @@ function Homepage(){
                 </Link>
                 <Link className="link_pages" to="/DESIGN341_Website/portfolio">
                     <div className="div_port">
-                    <video autoPlay muted loop playsInline poster={fb_planet} className="background_video">
-                        {/* <source src="/DESIGN341_Website/video/test_video2.mp4" type="video/mp4"/> */}
-                        your browser does not support the video tag
-                    </video>
+                        <video autoPlay muted loop playsInline poster={fb_planet} className="background_video">
+                            {/* <source src="/DESIGN341_Website/video/test_video2.mp4" type="video/mp4"/> */}
+                            your browser does not support the video tag
+                        </video>
 
                         <div className="content_overlay">
                             <h1>PORTFOLIO</h1>
@@ -55,7 +58,6 @@ function Homepage(){
                             {/* <source src="/DESIGN341_Website/video/test_video3.mp4" type="video/mp4"/> */}
                             your browser does not support the video tag
                         </video>
-
                         <div className="content_overlay">
                             <h1>CONTACTS</h1>
                         </div>
