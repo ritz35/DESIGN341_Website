@@ -13,6 +13,7 @@ import Cohort from './pages/cohortpage.jsx'
 import Portfolio from './pages/portfoliopage.jsx'
 import Contacts from './pages/contactspage.jsx'
 import Studentpages from './pages/studentpages.jsx';
+import Footer from './components/footer.jsx';
 
 
 
@@ -31,6 +32,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/DESIGN341_Website/portfolio' element={<Portfolio />} />
         <Route path='/DESIGN341_Website/contacts' element={<Contacts />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </StrictMode>,
 )
