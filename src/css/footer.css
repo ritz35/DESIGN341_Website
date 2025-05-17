@@ -2,25 +2,40 @@
     background-color: #1a1a1a;
     color: #f0f0f0;
     padding: 20px 40px;
-    text-align: center;
     font-size: 14px;
     margin-top: 40px;
+    text-align: center; /* center all text and links */
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* center children horizontally */
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .footer-links a {
     color: #f0f0f0;
     text-decoration: none;
-    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
     color: #00bcd4;
+}
+
+.footer-image img {
+    width: 120px; /* Adjust size as needed */
+    margin-top: 20px;
+    opacity: 0.8;
+}
+.l1,.l2{
+    margin-bottom: 0;
 }
