@@ -5,25 +5,22 @@
 
     /* border: 3px solid green; */
 }
-
 .portfolio_header {
     margin-bottom: 2rem;
 }
-
 .portfolio_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 4rem;
     padding: 2rem;
     padding-left: 0;
     padding-right: 24%;
     justify-items: center;    
 }
-
 .portfolio_card {
     width: 100%;
-    max-width: 320px;
-    background-color: #fefefe;
+    max-width: 600px;
+    /* background-color: #fefefe; */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -32,41 +29,50 @@
     align-items: center;
     transition: transform 0.3s ease;
 }
-
 .portfolio_card:hover {
     transform: scale(1.03);
 }
-
 .card_media {
     width: 100%;
     position: relative;
 }
-
 .student_image {
     width: 100%;
     height: auto;
     display: block;
 }
-
 .student_video {
     width: 100%;
     margin-top: 0.5rem;
     border-top: 1px solid #ccc;
 }
-
 .card_content {
     padding: 1rem;
     text-align: center;
 }
-
 .card_content h2 {
     margin: 0.5rem 0 0.3rem;
     font-size: 1.2rem;
     font-weight: bold;
 }
-
 .card_content h3 {
     margin: 0;
     font-size: 1rem;
     color: #666;
+}
+.desc_wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.desc_title{
+    margin-right: 10px;
+}
+.desc_button{
+    background-color: white;
+    color: black;
+}
+.desc_button:hover{
+    background-color: #3ec7f4;
+    color: white;
 }

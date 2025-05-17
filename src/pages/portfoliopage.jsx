@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import '../css/portfolio.css';
+import { useNavigate } from "react-router-dom";
 
 function Portfolio() {
     const [students, setStudents] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('/DESIGN341_Website/data/studentsData.json')
@@ -25,6 +27,12 @@ function Portfolio() {
                                 <source src={student.video} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
+                        </div>
+                        <div className="desc_wrapper">
+                            <h3 className="desc_title">View Creator:</h3>
+                            <button className="desc_button" 
+                                onClick={() => navigate(`/DESIGN341_Website/student/${student.id}`)}
+                                >{student.name}</button>
                         </div>
                     </div>
                 ))}
