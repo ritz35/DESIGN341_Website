@@ -10,6 +10,8 @@ function Cohort(){
     const [hoveredStudent, setHoveredStudent] = useState(null)
     /*this hover logic makes sure the pop up stays*/
     const [hoverTimeout, setHoverTimeout] = useState(null);
+    /*search query*/
+    const [searchQuery, setSearchQuery] = useState("");
 
 
     useEffect(() => {
@@ -19,15 +21,20 @@ function Cohort(){
             .catch(error => console.error("error in cohort page loading the students data: ", error));
     }, []);
 
+    /*when the mouse enters the card, it will show the pop up */
     const handleMouseEnter = (student) => {
       //clearTimeout(hoverTimeout); // Cancel any pending hide
       setHoveredStudent(student);
     };
-
+    /*when the mouse leaves the pop up, or on close, it will close the pop up */
     const handleMouseLeave = () => {
-      const timeout = setTimeout(() => setHoveredStudent(null), 200);
-      setHoverTimeout(timeout);
+        setHoveredStudent(null);
     };
+
+    /*handling search query */
+    const filteredStudents = students.filter(student =>
+        student.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
 
     return(
@@ -36,12 +43,12 @@ function Cohort(){
                 <h1 className="cohort_title">STUDENT COHORT</h1>
                 <div className="div_searchbar">
                     <h2>Search:</h2>
-                    <Searchbar />
+                    <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 </div>
             </div>
 
             <div className="cohort_grid">
-                {students.map((student) =>(
+                {filteredStudents.map((student) =>(
                     <div 
                         className="student_card"
                         key={student.id}
@@ -58,9 +65,9 @@ function Cohort(){
                 <div className="student_popup"
                     onMouseEnter={() => handleMouseEnter(student)}
                     onMouseLeave={handleMouseLeave}>
-                        
+
                     <button className="popup_close_button" onClick={() => setHoveredStudent(null)}>
-                        X
+                        x
                     </button>
 
                     <div className="popup_content">
