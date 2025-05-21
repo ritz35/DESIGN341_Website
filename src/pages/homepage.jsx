@@ -31,7 +31,7 @@ function Homepage(){
                 <Link className="link_pages" to="/DESIGN341_Website/cohort">
                 <div className="div_cohort">
                     <video autoPlay muted loop playsInline poster={fb_city} className="background_video">
-                        {/* <source src="/DESIGN341_Website/video/test_video.mp4" type="video/mp4"/> */}
+                        <source src="/DESIGN341_Website/video/Skyline_1.mp4" type="video/mp4"/> 
                         your browser does not support the video tag
                     </video>
 
@@ -43,7 +43,7 @@ function Homepage(){
                 <Link className="link_pages" to="/DESIGN341_Website/portfolio">
                     <div className="div_port">
                         <video autoPlay muted loop playsInline poster={fb_planet} className="background_video">
-                            {/* <source src="/DESIGN341_Website/video/test_video2.mp4" type="video/mp4"/> */}
+                            <source src="/DESIGN341_Website/video/Space_station_white.mp4" type="video/mp4"/>
                             your browser does not support the video tag
                         </video>
 
