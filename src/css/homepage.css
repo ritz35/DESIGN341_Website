@@ -14,7 +14,7 @@
     position: relative;
     height: 25vw;
     min-height: 150px;
-    overflow: hidden;
+    overflow: visible;
     border: 3px solid white;
 
     /*div expansion when hovered*/
@@ -22,6 +22,8 @@
 }
 
 .div_cohort:hover, .div_port:hover, .div_contact:hover{
+    margin-top: 100px;
+    margin-bottom: 100px;
     border: dashed 5px #3ec7f4;
     transform: scale(1.03);
 }
@@ -53,4 +55,54 @@
 }
 .hp_para{
     margin-bottom: 5%;
+}
+
+/* .div_hoverimg{
+    position: relative;
+    top: -80px;
+    left: 500px;
+    width: 300px;
+    height: 200px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+} */
+
+.hover_image_rocket, .hover_image_satel, .hover_image_ship{
+    position: absolute;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* border: 3px solid red; */
+}
+.hover_image_rocket{
+    top: -7vh;
+    left: 50vw;
+    width: 10vw;         /* Or use % or vw */
+}
+.hover_image_satel{
+    top: 0vh;
+    left: 30vw;
+    width: 40vw;         /* Or use % or vw */
+}
+.hover_image_ship{
+    top:  0vh;
+    left: 30vw;
+    width: 40vw;         /* Or use % or vw */
+}
+.div_cohort:hover .hover_image_rocket{
+    opacity: 1;
+    transform: translateY(-10px); /* Optional animation */
+}
+.div_port:hover .hover_image_satel{
+    opacity: 1;
+    transform: translateY(-10px); /* Optional animation */
+}
+.div_contact:hover .hover_image_ship{
+    opacity: 1;
+    transform: translateY(-10px); /* Optional animation */
 }

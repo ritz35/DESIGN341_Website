@@ -31,35 +31,46 @@ function Homepage(){
                 <Link className="link_pages" to="/DESIGN341_Website/cohort">
                 <div className="div_cohort">
                     <video autoPlay muted loop playsInline poster={fb_city} className="background_video">
-                        <source src="/DESIGN341_Website/video/Skyline_1.mp4" type="video/mp4"/> 
+                        <source src="/DESIGN341_Website/video/Skyline.mp4" type="video/mp4"/> 
                         your browser does not support the video tag
                     </video>
 
                     <div className="content_overlay">
                         <h1>STUDENT COHORT</h1>
                     </div>
+
+                    <div className="div_hoverimg">
+                        <img src={rocket_asset} className="hover_image_rocket" />
+                    </div>
                 </div>
                 </Link>
                 <Link className="link_pages" to="/DESIGN341_Website/portfolio">
                     <div className="div_port">
                         <video autoPlay muted loop playsInline poster={fb_planet} className="background_video">
-                            <source src="/DESIGN341_Website/video/Space_station_white.mp4" type="video/mp4"/>
+                            <source src="/DESIGN341_Website/video/Earth.mp4" type="video/mp4"/>
                             your browser does not support the video tag
                         </video>
 
                         <div className="content_overlay">
                             <h1>PORTFOLIO</h1>
                         </div>
+
+                        <div className="div_hoverimg">
+                            <img src={satel_asset} className="hover_image_satel" />
+                        </div>
                     </div>
                 </Link>
                 <Link className="link_pages" to="/DESIGN341_Website/contacts">
                     <div className="div_contact">
                         <video autoPlay muted loop playsInline poster={fb_galaxy} className="background_video">
-                            {/* <source src="/DESIGN341_Website/video/test_video3.mp4" type="video/mp4"/> */}
+                            <source src="/DESIGN341_Website/video/Galaxy.mp4" type="video/mp4"/>
                             your browser does not support the video tag
                         </video>
                         <div className="content_overlay">
                             <h1>CONTACTS</h1>
+                        </div>
+                        <div className="div_hoverimg">
+                            <img src={ship_asset} className="hover_image_ship" />
                         </div>
                     </div>
                 </Link>
