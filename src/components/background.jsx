@@ -1,8 +1,34 @@
 import '../css/background.css'
 import bg_vid from '/video/bg.mp4'
 import fallback_image from '../assets/bg_white.webp'
+import star from "/video/star.webm"
 
 function Background(){
+    const stars = Array.from({length: 7}).map((_, i) => {
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        const size = 100 + Math.random() * 100;
+
+        return(
+            <video 
+                key={i}
+                src={star}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="stars"
+                style={{
+                    top: `${top}%`,
+                    left: `${left}%`,
+                    width: `${size}px`,
+                    height: "auto",
+                    transform: `scale(${0.8 + Math.random() * 0.4})`,
+                }}
+            />
+        );
+    });
+
     return(
         <div className='bg_wrapper'>
             <video autoPlay loop muted playsInline poster={fallback_image} className='bg_video'>
@@ -11,7 +37,9 @@ function Background(){
             </video>
 
             <div className='bg_content'>
-                {/*can put heaps of assets here yayyaa */}
+                <div className='div_stars'>
+                    {stars}
+                </div>
             </div>
         </div>
     )
