@@ -7,6 +7,11 @@ import fb_planet from '../assets/planet.svg'
 import rocket_asset from '../assets/Rocket.png'
 import satel_asset from '../assets/Satellite.png'
 import ship_asset from '../assets/Ship.png'
+import astro from '/video/Astro.webm'
+import bg_skyline from '/video/Skyline.mp4'
+import bg_planet from '/video/Earth.mp4'
+import bg_galaxy from '/video/Galaxy.mp4'
+
 
 
 function Homepage(){
@@ -26,12 +31,19 @@ function Homepage(){
                 {infoData.map(item => (
                     <h2 key={item.id} className="hp_para">{item.info}</h2>
                 ))}
+                <div className="div_astronaut">
+                    <video autoPlay muted loop playsInline className="astro_video">
+                    <source src={astro} type="video/mp4"/> 
+                            your browser does not support the video tag
+                    </video>
+                </div>
             </div>
+
             <div>
                 <Link className="link_pages" to="/DESIGN341_Website/cohort">
                 <div className="div_cohort">
                     <video autoPlay muted loop playsInline poster={fb_city} className="background_video">
-                        <source src="/DESIGN341_Website/video/Skyline.mp4" type="video/mp4"/> 
+                        <source src={bg_skyline} type="video/mp4"/> 
                         your browser does not support the video tag
                     </video>
 
@@ -47,7 +59,7 @@ function Homepage(){
                 <Link className="link_pages" to="/DESIGN341_Website/portfolio">
                     <div className="div_port">
                         <video autoPlay muted loop playsInline poster={fb_planet} className="background_video">
-                            <source src="/DESIGN341_Website/video/Earth.mp4" type="video/mp4"/>
+                            <source src={bg_planet} type="video/mp4"/>
                             your browser does not support the video tag
                         </video>
 
@@ -63,7 +75,7 @@ function Homepage(){
                 <Link className="link_pages" to="/DESIGN341_Website/contacts">
                     <div className="div_contact">
                         <video autoPlay muted loop playsInline poster={fb_galaxy} className="background_video">
-                            <source src="/DESIGN341_Website/video/Galaxy.mp4" type="video/mp4"/>
+                            <source src={bg_galaxy} type="video/mp4"/>
                             your browser does not support the video tag
                         </video>
                         <div className="content_overlay">
