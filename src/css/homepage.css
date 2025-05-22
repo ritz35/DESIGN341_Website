@@ -22,8 +22,8 @@
 }
 
 .div_cohort:hover, .div_port:hover, .div_contact:hover{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     border: dashed 5px #3ec7f4;
     transform: scale(1.03);
 }
@@ -52,24 +52,15 @@
     border: 3px solid #3ec7f4;
     padding: 10%;
     backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+.intro_wrapper:hover{
+    transform: scale(1.03);
+    margin-bottom: 5vh;
 }
 .hp_para{
     margin-bottom: 5%;
 }
-
-/* .div_hoverimg{
-    position: relative;
-    top: -80px;
-    left: 500px;
-    width: 300px;
-    height: 200px;
-    background-color: #222;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-} */
 
 .hover_image_rocket, .hover_image_satel, .hover_image_ship{
     position: absolute;
