@@ -3,9 +3,11 @@ import '../css/background.css'
 import bg_vid from '/video/bg.mp4'
 import fallback_image from '../assets/bg_white.webp'
 import star from "/video/star.webm"
+import star_white from "/video/stars_white.webm"
 
 function Background(){
     const starRefs = useRef([]);
+    const starVideos = [star, star_white];
 
     useEffect(() => {
         starRefs.current.forEach((el, i) => {
@@ -25,11 +27,13 @@ function Background(){
         const size = 100 + Math.random() * 200;
         const delay = Math.random() * 5000;
 
+        const videoSrc = starVideos[Math.floor(Math.random() * starVideos.length)];
+
         return(
             <video 
                 key={i}
                 ref={(el) => (starRefs.current[i] = el)}
-                src={star}
+                src={videoSrc}
                 loop
                 muted
                 playsInline
