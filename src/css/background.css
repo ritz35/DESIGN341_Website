@@ -35,6 +35,7 @@
     animation: floatAnim 30s infinite ease-in-out;
     mix-blend-mode: screen;
     background: transparent;
+    animation-delay: var(--delay);
 }
 
 @keyframes floatAnim {

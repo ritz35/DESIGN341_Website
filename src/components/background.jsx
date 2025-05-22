@@ -1,19 +1,35 @@
+import { useEffect, useRef } from 'react'
 import '../css/background.css'
 import bg_vid from '/video/bg.mp4'
 import fallback_image from '../assets/bg_white.webp'
 import star from "/video/star.webm"
 
 function Background(){
+    const starRefs = useRef([]);
+
+    useEffect(() => {
+        starRefs.current.forEach((el, i) => {
+            const delay = Math.random() * 5000;
+            setTimeout(() => {
+                el?.play().catch(() => {
+                    console.warn(`Star ${i} failed to play.`);
+                });
+            }, delay);
+        });
+    }, []);
+
+
     const stars = Array.from({length: 7}).map((_, i) => {
         const top = Math.random() * 100;
         const left = Math.random() * 100;
-        const size = 100 + Math.random() * 100;
+        const size = 100 + Math.random() * 200;
+        const delay = Math.random() * 5000;
 
         return(
             <video 
                 key={i}
+                ref={(el) => (starRefs.current[i] = el)}
                 src={star}
-                autoPlay
                 loop
                 muted
                 playsInline
@@ -24,6 +40,8 @@ function Background(){
                     width: `${size}px`,
                     height: "auto",
                     transform: `scale(${0.8 + Math.random() * 0.4})`,
+                    animationDelay: `${delay}s`,
+                    '--delay': `${delay}s`
                 }}
             />
         );
