@@ -66,34 +66,39 @@
     position: absolute;
     height: auto;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateY(0); /* Default position */
+    transition: opacity 0.6s ease, transform 0.6s ease, left 0.6s ease;
     pointer-events: none;
     /* border: 3px solid red; */
 }
 .hover_image_rocket{
-    top: -7vh;
+    top: -20vh;
     left: 50vw;
-    width: 10vw;         /* Or use % or vw */
+    width: 10vw;
+    transform: translateY(-200px); /* Initial offset */
+}
+.div_cohort:hover .hover_image_rocket{
+    opacity: 1;
+    transform: translateY(0); /* Comes down */
 }
 .hover_image_satel{
     top: 0vh;
     left: 30vw;
-    width: 40vw;         /* Or use % or vw */
-}
-.hover_image_ship{
-    top:  0vh;
-    left: 30vw;
-    width: 40vw;         /* Or use % or vw */
-}
-.div_cohort:hover .hover_image_rocket{
-    opacity: 1;
-    transform: translateY(-10px); /* Optional animation */
+    width: 40vw;
+    transform: rotate(-50deg) translateX(-20px); /* Starting tilted */
 }
 .div_port:hover .hover_image_satel{
     opacity: 1;
-    transform: translateY(-10px); /* Optional animation */
+    transform: rotate(10deg) translateX(10px); /* Swings around */
+}
+.hover_image_ship{
+    top:  0vh;
+    left: 100vw;
+    width: 40vw;         /* Or use % or vw */
+    transform: translateX(0);
 }
 .div_contact:hover .hover_image_ship{
     opacity: 1;
-    transform: translateY(-10px); /* Optional animation */
+    left: 30vw; /* Final position */
+    transform: translateX(0); /* Or add some small slide for realism */
 }
