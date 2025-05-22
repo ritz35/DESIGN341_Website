@@ -24,7 +24,7 @@ function Homepage(){
         <div className="homepage_wrapper">
             <div className="intro_wrapper">
                 {infoData.map(item => (
-                    <h4 key={item.id} className="hp_para">{item.info}</h4>
+                    <h2 key={item.id} className="hp_para">{item.info}</h2>
                 ))}
             </div>
             <div>
