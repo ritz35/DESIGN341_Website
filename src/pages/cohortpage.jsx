@@ -27,55 +27,32 @@ function Cohort(){
             .catch(error => console.error("error in cohort page loading the students data: ", error));
     }, []);
 
-    //loading bar foing is thing
-    // useEffect(() => {
-    //     if(isLoading && selectedCard){
-    //         const timeout = setTimeout(() => {
-    //             setSelectedCard(null);
-    //         }, 800);
-    //         return () => clearTimeout(timeout);
-    //     }
-    // }, [isLoading, selectedCard]);
-
-    //clear timeouts when the component unmounts
-    useEffect(() => {
-        return () => {
-            if(hoverTimeout) clearTimeout(hoverTimeout);
-        };
-    }, [hoverTimeout]);
-
     /*when the mouse enters the card, it will show the pop up */
     const handleMouseEnter = (student, event) => {
         //if loading animation is playing, then skip
         if(isLoading) return;
 
-        if (hoverTimeout) {
-            clearTimeout(hoverTimeout);
-            setHoverTimeout(null);
-        }
 
         const rect = event.currentTarget.getBoundingClientRect();
         setCardRect(rect);
         setSelectedCard({ student, rect: rect});
+
         //making the loading bar show up
         setIsLoading(true);
 
         // Wait for morph animation to finish (e.g., 800ms)
-        const newTimeout = setTimeout(() => {
-            const showBar = document.querySelector(".loadingbar");
-            if(showBar){
-                showBar.classList.add("visable");
-            }
+        setTimeout(() => {
+            document.querySelector(".loadingbar");
 
             //after bar animation finishes (~1000ms) show pop ups
-            const popupTimeout = setTimeout(() => {
+            setTimeout(() => {
+                //the pop up is the student hovered
                 setHoveredStudent(student);
+                //removes the loading bar
                 setIsLoading(false);
-                setSelectedCard(null);
-            }, 100); // Delay after bar animation
-            setHoverTimeout(popupTimeout);
+
+            },200); // Delay after bar animation
         }, 800);// Delay for card morphing
-        setHoverTimeout(newTimeout);
     };
 
     /*when the mouse leaves the pop up, or on close, it will close the pop up */
@@ -119,6 +96,7 @@ function Cohort(){
                     //makes sure everthing else stays still, but only the selected card moves
                     const isClosing = selectedCard?.student?.id === student.id && isLoading;
 
+                    //empty placeholder
                     if(isClosing)
                         return (
                           <div 
