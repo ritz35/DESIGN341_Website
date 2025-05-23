@@ -8,16 +8,23 @@ function Cohort(){
     const [students, setStudents] = useState([]);
     /*This is for a module that opens up whenever a student is hovered*/
     const [hoveredStudent, setHoveredStudent] = useState(null)
-    /*this hover logic makes sure the pop up stays*/
-    const [hoverTimeout, setHoverTimeout] = useState(null);
     /*search query*/
     const [searchQuery, setSearchQuery] = useState("");
     /*loading bar */
     const [isLoading, setIsLoading] = useState(false);
     /* the selected card */
     const [selectedCard, setSelectedCard] = useState(null);
-
     const [cardRect, setCardRect] = useState(null);
+    //setting the number of the loading bar
+    const [loadingProgress, setLoadingProgress] = useState(0);
+    //resetting the fill animation
+    const [loadingAnimKey, setLoadingAnimKey] = useState(0);
+
+    useEffect(() => {
+      if (isLoading) {
+        setLoadingAnimKey(prev => prev + 1); // triggers animation restart
+      }
+    }, [isLoading]);
 
     //the method getting the information from the json data file
     useEffect(() => {
@@ -32,7 +39,6 @@ function Cohort(){
         //if loading animation is playing, then skip
         if(isLoading) return;
 
-
         const rect = event.currentTarget.getBoundingClientRect();
         setCardRect(rect);
         setSelectedCard({ student, rect: rect});
@@ -40,19 +46,29 @@ function Cohort(){
         //making the loading bar show up
         setIsLoading(true);
 
-        // Wait for morph animation to finish (e.g., 800ms)
-        setTimeout(() => {
-            document.querySelector(".loadingbar");
+        /* THE NUMBER INCREMENTALLING */
+        //resetting it each time
+        setLoadingProgress(0);
 
-            //after bar animation finishes (~1000ms) show pop ups
+        setTimeout(() => {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 1;
+                setLoadingProgress(progress);
+                if(progress >= 100){
+                    clearInterval(interval);
+                };
+            }, 0); //adjusting speed
+
+            //the timeout for when the pop up will happen
             setTimeout(() => {
                 //the pop up is the student hovered
                 setHoveredStudent(student);
                 //removes the loading bar
                 setIsLoading(false);
 
-            },200); // Delay after bar animation
-        }, 800);// Delay for card morphing
+            }, 2000); // Delay after bar animation
+        }, 800);
     };
 
     /*when the mouse leaves the pop up, or on close, it will close the pop up */
@@ -122,7 +138,6 @@ function Cohort(){
                 <div 
                     className="loadingbar_wrapper"
                         style={{
-                          position: "fixed",
                           top: cardRect.top + "px",
                           left: cardRect.left + "px",
                           width: cardRect.width + "px",
@@ -130,8 +145,19 @@ function Cohort(){
                           transform: "none", // overrides translate(-50%,-50%)
                         }}
                 >
-                    <div className="loadingbar"></div>
+                <div 
+                    className="loadingbar"
+                    key={(loadingAnimKey)}
+                    >
+                    <div className="loading_fill" style={{ width: `${loadingProgress}%` }} />
+                    <span 
+                        className="loading_number"
+                        style={{ left: `${loadingProgress}%` }}
+                    >
+                    {loadingProgress}%
+                    </span>
                 </div>
+            </div>
             )}
 
             {hoveredStudent && (
@@ -155,25 +181,6 @@ function Cohort(){
                     </div>
                 </div>
             )}
-            {/* {shouldRenderGhostCard && (
-                <div
-                  className="ghost_card"
-                  style={{
-                    position: "fixed",
-                    top: selectedCard.rect.top,
-                    left: selectedCard.rect.left,
-                    width: selectedCard.rect.width,
-                    height: selectedCard.rect.height,
-                    transition: "all 0.8s ease-in-out",
-                    zIndex: 1000,
-                    background: "#009ec4",
-                    borderRadius: "12px",
-                    transform: "translate(-50%, -50%) scale(1)",
-                    animation: "morphToBar 0.8s forwards",
-                    // pointerEvents: "none"
-                  }}
-                />
-            )} */}
         </div>
     );
 }

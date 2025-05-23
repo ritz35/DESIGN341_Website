@@ -110,19 +110,63 @@
 
 /* loading bar animation*/
 .loadingbar_wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 999;
+  width: 200px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
 }
 .loadingbar {
-  width: 0;
+  position: relative;
+  width: 200px;
+  width: 20px;
   height: 20px;
+  border: 3px solid white;
+  border-radius: 5px;
+  animation: growBar 0.8s ease forwards;
+  overflow: hidden;
+}
+/* .loadingbar::before {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
   background-color: white;
   border-radius: 10px;
-  animation: growBar 1s ease forwards
+  animation: fillBar 0.3s ease forwards;
+  animation-delay: 1s;
+} */
+/* fill bar */
+.loading_fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  transition: width 0.15s ease;
+  z-index: 1;
+
 }
+.loading_number {
+  position: absolute;
+  top: 50%;
+  transform: translate(-125%, -50%); /* shift left by 100% of its own width to keep it inside */
+  color: black;
+  font-weight: bold;
+  z-index: 2;
+  transition: left 0.15s ease;
+  pointer-events: none;
+}
+
 
 /*this makes the student card shrink*/
 @keyframes growBar {
@@ -136,7 +180,16 @@
     width: 200px;
     height: 20px;
     border-radius: 20px;
-    background-color: #3ec7f4;
+    /* background-color: #3ec7f4; */
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
 /*================css for student pop up================*/

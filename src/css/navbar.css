@@ -3,7 +3,7 @@
   display: grid;
   grid-template-rows: auto auto auto auto;
   position: fixed;
-  height: 55vh;
+  /* height: 55vh; */
 
   /*styling the background of the whole navbar*/
   /* background: white; */
@@ -110,6 +110,7 @@
 .navbar_wrapper{
   position: relative;
   display: inline-block;
+  top: -12vh;
 }
 .nav_image{
   z-index: 2;
