@@ -40,23 +40,28 @@
 .student_card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 3px solid white;
   border-radius: 1rem;
   padding: 2rem;
   color: white;
   text-align: center;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin-left: 2rem;
-  z-index: 0;
+  /* z-index: 0; */
   max-width: 200px;
   width: 100%;
+
+  transition: all 0.5s ease;
+  transform-origin: center center;
+  position: relative;
+  z-index: 1;
 }
 
-.student_card:hover {
+/* .student_card:hover {
   transform: translateY(-5px);
   border-color: #3ec7f4;
-}
+} */
 
 .student_image {
   width: 100%;
@@ -71,7 +76,104 @@
   font-size: 2.5rem;
 }
 
-/*css for student pop up*/
+/* Add this animation keyframe */
+/* @keyframes closeCard {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    max-height: 300px;
+    padding: 2rem;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+  }
+} */
+
+/* When the card is hovered, it closes */
+.student_card.closing {
+  animation: closeCard 0.5s forwards ease-in-out;
+  pointer-events: none;
+}
+
+.student_card.closing_placeholder {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;  /* so it’s not interactive */
+  visibility: hidden;    /* makes it invisible but still takes space */
+  user-select: none;
+}
+
+
+/* loading bar animation*/
+.loadingbar_wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 200px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.loadingbar {
+  width: 0;
+  height: 20px;
+  background: linear-gradient(to right, #3ec7f4, #009ec4);
+  border-radius: 10px;
+  animation: growBar 1s ease forwards, morphToPopup 0.5s ease-in-out 1s forwards;
+}
+
+/*this makes the student card shrink*/
+@keyframes growBar {
+  0% {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+  100% {
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+}
+
+/* @keyframes morphToPopup {
+  0% {
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+  100% {
+    width: 600px;
+    height: 400px;
+    border-radius: 20px;
+    background: rgba(30, 30, 30, 0.95);
+  }
+} */
+/* @keyframes morphToBar {
+  0% {
+    border-radius: 12px;
+    width: var(--initial-width); 
+    height: var(--initial-height);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+  }
+} */
+
+
+/*================css for student pop up================*/
 .student_popup{
   position: fixed;
   top: 50%;

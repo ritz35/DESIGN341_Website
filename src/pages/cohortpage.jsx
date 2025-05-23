@@ -12,8 +12,14 @@ function Cohort(){
     const [hoverTimeout, setHoverTimeout] = useState(null);
     /*search query*/
     const [searchQuery, setSearchQuery] = useState("");
+    /*loading bar */
+    const [isLoading, setIsLoading] = useState(false);
+    /* the selected card */
+    const [selectedCard, setSelectedCard] = useState(null);
 
+    const [cardRect, setCardRect] = useState(null);
 
+    //the method getting the information from the json data file
     useEffect(() => {
         fetch('/DESIGN341_Website/data/studentsData.json')
             .then(response => response.json())
@@ -21,11 +27,57 @@ function Cohort(){
             .catch(error => console.error("error in cohort page loading the students data: ", error));
     }, []);
 
+    //loading bar foing is thing
+    // useEffect(() => {
+    //     if(isLoading && selectedCard){
+    //         const timeout = setTimeout(() => {
+    //             setSelectedCard(null);
+    //         }, 800);
+    //         return () => clearTimeout(timeout);
+    //     }
+    // }, [isLoading, selectedCard]);
+
+    //clear timeouts when the component unmounts
+    useEffect(() => {
+        return () => {
+            if(hoverTimeout) clearTimeout(hoverTimeout);
+        };
+    }, [hoverTimeout]);
+
     /*when the mouse enters the card, it will show the pop up */
-    const handleMouseEnter = (student) => {
-      //clearTimeout(hoverTimeout); // Cancel any pending hide
-      setHoveredStudent(student);
+    const handleMouseEnter = (student, event) => {
+        //if loading animation is playing, then skip
+        if(isLoading) return;
+
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            setHoverTimeout(null);
+        }
+
+        const rect = event.currentTarget.getBoundingClientRect();
+        setCardRect(rect);
+        setSelectedCard({ student, rect: rect});
+        //making the loading bar show up
+        setIsLoading(true);
+
+        // Wait for morph animation to finish (e.g., 800ms)
+        const newTimeout = setTimeout(() => {
+            const showBar = document.querySelector(".loadingbar");
+            if(showBar){
+                showBar.classList.add("visable");
+            }
+
+            //after bar animation finishes (~1000ms) show pop ups
+            const popupTimeout = setTimeout(() => {
+                setHoveredStudent(student);
+                setIsLoading(false);
+                setSelectedCard(null);
+            }, 100); // Delay after bar animation
+            setHoverTimeout(popupTimeout);
+        }, 800);// Delay for card morphing
+        setHoverTimeout(newTimeout);
     };
+
     /*when the mouse leaves the pop up, or on close, it will close the pop up */
     const handleMouseLeave = () => {
         setHoveredStudent(null);
@@ -36,6 +88,8 @@ function Cohort(){
         student.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    //only render 1 thing
+    const shouldRenderGhostCard = isLoading && selectedCard && !hoveredStudent;
 
     return(
         <div className="cohort_wrapper">
@@ -48,22 +102,63 @@ function Cohort(){
             </div>
 
             <div className="cohort_grid">
-                {filteredStudents.map((student) =>(
-                    <div 
-                        className="student_card"
-                        key={student.id}
-                        onMouseEnter={() => handleMouseEnter(student)}
-                        >
-                        <img src={student.image} alt={student.name} className="student_image" />
-                        <h2>{student.name}</h2>
-                        <h3>{student.role}</h3>
-                    </div>
-                ))}
+                {filteredStudents.map((student) =>{
+                    // Hide card if popup for that student is open
+                    const isPopupOpen = hoveredStudent?.id === student.id;
+
+                    if(isPopupOpen){
+                        // Render placeholder to keep grid layout or null to hide completely
+                        return (
+                            <div
+                              key={student.id}
+                              className="student_card closing_placeholder"
+                            />
+                          );
+                    }
+                    
+                    //makes sure everthing else stays still, but only the selected card moves
+                    const isClosing = selectedCard?.student?.id === student.id && isLoading;
+
+                    if(isClosing)
+                        return (
+                          <div 
+                            key={student.id}
+                            className="student_card closing_placeholder"
+                          />
+                        );
+                    return(
+                        <div 
+                            className={`student_card ${isClosing ? "closing" : ""}`}
+                            key={student.id}
+                            onMouseEnter={(e) => handleMouseEnter(student, e)}
+                            >
+                            <img src={student.image} alt={student.name} className="student_image" />
+                            <h2>{student.name}</h2>
+                            <h3>{student.role}</h3>
+                        </div>
+                    )
+                })}
             </div>
+
+            {isLoading && (
+                <div 
+                    className="loadingbar_wrapper"
+                        style={{
+                          position: "fixed",
+                          top: cardRect.top + "px",
+                          left: cardRect.left + "px",
+                          width: cardRect.width + "px",
+                          height: cardRect.height + "px",
+                          transform: "none", // overrides translate(-50%,-50%)
+                        }}
+                >
+                    <div className="loadingbar"></div>
+                </div>
+            )}
 
             {hoveredStudent && (
                 <div className="student_popup"
-                    onMouseEnter={() => handleMouseEnter(student)}
+                    onMouseEnter={() => handleMouseEnter(hoveredStudent)}
                     onMouseLeave={handleMouseLeave}>
 
                     <button className="popup_close_button" onClick={() => setHoveredStudent(null)}>
@@ -82,6 +177,25 @@ function Cohort(){
                     </div>
                 </div>
             )}
+            {/* {shouldRenderGhostCard && (
+                <div
+                  className="ghost_card"
+                  style={{
+                    position: "fixed",
+                    top: selectedCard.rect.top,
+                    left: selectedCard.rect.left,
+                    width: selectedCard.rect.width,
+                    height: selectedCard.rect.height,
+                    transition: "all 0.8s ease-in-out",
+                    zIndex: 1000,
+                    background: "#009ec4",
+                    borderRadius: "12px",
+                    transform: "translate(-50%, -50%) scale(1)",
+                    animation: "morphToBar 0.8s forwards",
+                    // pointerEvents: "none"
+                  }}
+                />
+            )} */}
         </div>
     );
 }
