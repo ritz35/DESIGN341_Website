@@ -55,10 +55,10 @@ function Cohort(){
             const interval = setInterval(() => {
                 progress += 1;
                 setLoadingProgress(progress);
-                if(progress >= 100){
+                if(progress >= 99){
                     clearInterval(interval);
                 };
-            }, 0); //adjusting speed
+            }); //adjusting speed
 
             //the timeout for when the pop up will happen
             setTimeout(() => {

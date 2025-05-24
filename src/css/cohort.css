@@ -1,6 +1,6 @@
 /* WRAPPER: centers and pads everything */
 .cohort_wrapper {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -23,9 +23,11 @@
 }
 
 .div_searchbar input {
-  width: 100%;
+  width: 91%;
   font-size: 1rem;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
+  border: 3px solid white;
+  margin-bottom: 3vh;
 }
 
 /* GRID: responsive grid layout */
@@ -132,19 +134,6 @@
   animation: growBar 0.8s ease forwards;
   overflow: hidden;
 }
-/* .loadingbar::before {
-  content: '';
-  position: absolute;
-  display: none;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background-color: white;
-  border-radius: 10px;
-  animation: fillBar 0.3s ease forwards;
-  animation-delay: 1s;
-} */
 /* fill bar */
 .loading_fill {
   position: absolute;
@@ -199,6 +188,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(30, 30, 30, 0.95);
+  border: 3px dashed white;
   border-radius: 10px;
   padding: 2rem;
   z-index: 1000;
