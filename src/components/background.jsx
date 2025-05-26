@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import '../css/background.css'
-import bg_vid from '/video/bg.mp4'
+import bg_vid from '/video/bg2.mp4'
 import fallback_image from '../assets/bg_white.webp'
 import star from "/video/star.webm"
 import star_white from "/video/stars_white.webm"
