@@ -73,7 +73,7 @@ const handleMouseEnter = (student, event) => {
             loadingInterval.current = null;
           }
         }); // Add interval delay (e.g., 30ms)
-      }, 600);
+      }, 500);
 
       popupTimeout.current = setTimeout(() => {
         setHoveredStudent(student);
@@ -81,7 +81,7 @@ const handleMouseEnter = (student, event) => {
         loadingInterval.current && clearInterval(loadingInterval.current);
         loadingInterval.current = null;
         popupTimeout.current = null;
-      }, 3000);
+      }, 2500);
     }, 2000);
 };  
 
