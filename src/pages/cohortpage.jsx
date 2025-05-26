@@ -66,7 +66,6 @@ function Cohort(){
                 setHoveredStudent(student);
                 //removes the loading bar
                 setIsLoading(false);
-
             }, 2000); // Delay after bar animation
         }, 800);
     };
@@ -134,32 +133,6 @@ function Cohort(){
                 })}
             </div>
 
-            {isLoading && (
-                <div 
-                    className="loadingbar_wrapper"
-                        style={{
-                          top: cardRect.top + "px",
-                          left: cardRect.left + "px",
-                          width: cardRect.width + "px",
-                          height: cardRect.height + "px",
-                          transform: "none", // overrides translate(-50%,-50%)
-                        }}
-                >
-                <div 
-                    className="loadingbar"
-                    key={(loadingAnimKey)}
-                    >
-                    <div className="loading_fill" style={{ width: `${loadingProgress}%` }} />
-                    <span 
-                        className="loading_number"
-                        style={{ left: `${loadingProgress}%` }}
-                    >
-                    {loadingProgress}%
-                    </span>
-                </div>
-            </div>
-            )}
-
             {hoveredStudent && (
                 <div className="student_popup"
                     onMouseEnter={() => handleMouseEnter(hoveredStudent)}
@@ -178,6 +151,17 @@ function Cohort(){
                         <Link to={`/DESIGN341_Website/student/${hoveredStudent.id}`} className="view_profile_button">
                             View Full Profile →
                         </Link>
+                    </div>
+                </div>
+            )}
+            
+            {isLoading && selectedCard && cardRect && !hoveredStudent &&(
+                <div className="loadingbar_wrapper">
+                    <div className="loadingbar" key={(loadingAnimKey)}>
+                        <div className="loading_fill" style={{ width: `${loadingProgress}%` }} />
+                            <span className="loading_number" style={{ left: `${loadingProgress}%` }}>
+                                {loadingProgress}%
+                            </span>
                     </div>
                 </div>
             )}

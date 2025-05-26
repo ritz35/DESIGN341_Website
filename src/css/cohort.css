@@ -96,6 +96,7 @@
 
 /* When the card is hovered, it closes */
 .student_card.closing {
+    /* border: 3px solid red; */
   animation: closeCard 0.5s forwards ease-in-out;
   pointer-events: none;
 }
@@ -112,13 +113,14 @@
 
 /* loading bar animation*/
 .loadingbar_wrapper{
+  /* border: 3px solid green; */
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  /* transform: translate(-50%, -50%); */
   z-index: 999;
-  width: 200px;
-  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,6 +201,8 @@
   transition: opacity 0.3s ease;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   pointer-events: auto;
+
+  animation: expandPopup 0.4s ease-out forwards;
 }
 
 .popup_content{
@@ -245,7 +249,18 @@
   color: #3ec7f4;
 }
 
-/* MEDIA QUERIES (only where needed) */
+@keyframes expandPopup {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* =================MEDIA QUERIES (only where needed) ============================*/
 @media(max-width: 1600px) {
   .student_card{
     border: 3px solid orange;
