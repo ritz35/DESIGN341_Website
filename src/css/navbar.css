@@ -135,30 +135,6 @@
   opacity: 0;
   transform: translateX(-50px);
 } */
-@media (max-width: 768px) {
-  .nav_image {
-    border: 3px green solid;
-    width: 50px;
-    height: 30vh;
-  }
-
-  .div_navbar {
-    height: 25vh;
-  }
-}
-@media (max-width: 480px) {
-  .nav_image {
-    border: 3px purple solid;
-    height: 20vh;
-    width: 30px;
-  }
-
-  .div_navbar {
-    height: 20vh;
-  }
-
-  
-}
 /*==============medium sized screens=================*/
 @media screen and (max-width: 1024px) {
     .div_navbar {

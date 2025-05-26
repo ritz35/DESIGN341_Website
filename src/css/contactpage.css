@@ -1,24 +1,24 @@
+/*====== contact card =======*/
 .contact_wrapper {
     /* margin-left: 5%; */
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 1vh;
-    background: rgba(0, 0, 0, 0.4); /* Optional background */
-    /* border: 3px solid green; */
   }
   
   .contact_card {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
     padding: 3rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;
+
+    margin: 0 auto 10vh auto;
   }
   
   .contact_card h1 {
@@ -26,6 +26,7 @@
     font-size: 2.5rem;
   }
   
+  /*inside the contact box*/
   .contact_form {
     display: flex;
     flex-direction: column;
@@ -61,4 +62,70 @@
   .contact_form button:hover {
     background-color: #0099cc;
   }
-  
+  /* ========== contact information paragraphs ========== */
+/* Contact Information adjustments */
+.contact_information {
+  border: 3px dashed white;
+  margin: 0 20%; /* keep horizontal margin */
+  padding: 100px;
+  backdrop-filter: blur(10px);
+}
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Medium screens */
+@media screen and (max-width: 1024px) {
+  .contact_card {
+    max-width: 400px;
+    padding: 2rem; /* reduce padding */
+  }
+  .contact_information {
+    margin: 0 15%;
+    padding: 60px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small screens (tablets and phones) */
+@media screen and (max-width: 768px) {
+  .contact_card {
+    max-width: 320px;
+    padding: 1.5rem; /* further reduce padding */
+  }
+  .contact_information {
+    margin: 0 5%; /* much smaller margins */
+    padding: 30px; /* smaller padding */
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens (phones) */
+@media screen and (max-width: 480px) {
+  .contact_card {
+    max-width: 90vw; /* nearly full width */
+    padding: 1rem;
+  }
+  .contact_information {
+    margin: 0 3%;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 0.9rem;
+  }
+}
+
