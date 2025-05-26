@@ -137,7 +137,7 @@
 } */
 @media (max-width: 768px) {
   .nav_image {
-    /* border: 3px green solid; */
+    border: 3px green solid;
     width: 50px;
     height: 30vh;
   }
@@ -159,6 +159,98 @@
 
   
 }
+/*==============medium sized screens=================*/
+@media screen and (max-width: 1024px) {
+    .div_navbar {
+    /* border: 3px solid white; */
+    /* justify-content: space-around; */
+    /* align-items: right; */
+    /* position: fixed; */
+    /* height: auto; */
+    /* border-radius: 0;         Remove side curve for top bar */
+
+    display: flex;
+  }
+
+  .nav_item {
+    padding: 0.5rem 1rem;
+    border: none;
+    /* border-bottom: 2px solid transparent; */
+    text-align: left;
+    border: 2px dashed white;
+  }
+
+  .nav_item:hover {
+    /* border-bottom: 3px dashed white; */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    /* border: 3px solid red; */
+    margin-top: 20vh;
+    margin-right: 5vw;
+  }
+
+  .navbar a {
+    font-size: clamp(0.1rem, 3vw, 1rem);
+  }
+
+  .nav_image {
+    border: none;
+    position: fixed;
+    height: 30vh;
+    top: 31vh;
+  }
+}
+
+/* ========== MOBILE: Horizontal Navbar on Top ========== */
+@media (max-width: 768px) {
+  .div_navbar {
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    padding: 0.5rem 1rem;
+    background-color: #000;   /* Or any background you prefer */
+    z-index: 1000;
+    border-radius: 0;         /* Remove side curve for top bar */
+  }
+
+  .nav_item {
+    padding: 0.5rem 1rem;
+    border: none;
+    /* border-bottom: 2px solid transparent; */
+    text-align: right;
+  }
+
+  .nav_item:hover {
+    /* border-bottom: 2px dashed #3ec7f4; */
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 0;
+    margin-right: 0%;
+    padding-top: 10vh;
+    background-color: black;
+  }
+
+  .navbar a {
+    font-size: clamp(0.1rem, 3vw, 1rem);
+  }
+
+  .nav_image {
+    border: none;
+    position: absolute;
+    top: -30px;
+  }
+}
+
 
 
 

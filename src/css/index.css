@@ -1,4 +1,8 @@
 /*The css file for the whole website*/
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 :root {
   font-family: 'Space Grotesk Variable', sans-serif;
   line-height: 1.5;

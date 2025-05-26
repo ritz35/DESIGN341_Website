@@ -48,7 +48,7 @@ function Homepage(){
                     </video>
 
                     <div className="content_overlay">
-                        <h1>STUDENT COHORT</h1>
+                        <h1>COHORT</h1>
                     </div>
 
                     <div className="div_hoverimg">

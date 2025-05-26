@@ -128,3 +128,81 @@
 .intro_wrapper:hover .astro_video{
     transform: scale(1.03);
 }
+/*==============medium sized screens=================*/
+@media screen and (max-width: 1024px) {
+    /*================astro naut video===================*/
+  .div_astronaut{
+    position: absolute;
+    /* border: 3px solid red; */
+    bottom: -25vh;
+    right: -35vw;
+    width: 100vh; /* Adjust size as needed */
+    height: auto;
+    z-index: 2; /* Ensure it's above background but under text if needed */
+    pointer-events: none; /* Prevents interference with hover or clicks */
+    
+    }
+.astro_video{
+    /* border: 3px solid green; */
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Optional if you want the whole container to scale */
+    transform: scale(1);
+    }
+.intro_wrapper:hover .astro_video{
+    transform: scale(1.03);
+    }
+    /*================rocket===================*/
+}
+/*==============smaller screens=================*/
+@media screen and (max-width: 768px) {
+    .homepage_wrapper {
+        margin-left: 5%;
+        width: 90%;
+        grid-template-rows: auto auto auto;
+    }
+
+    .div_cohort, .div_port, .div_contact {
+        height: auto;
+        min-height: 200px;
+        /* margin-bottom: 10vh; */
+    }
+
+    .div_cohort:hover, .div_port:hover, .div_contact:hover {
+        margin-top: 0;
+        margin-bottom: 0;
+        transform: none;
+        border: 3px dashed #3ec7f4;
+    }
+
+    .content_overlay {
+        padding: 5vw;
+        font-size: clamp(12px, 4vw, 18px);
+        max-width: 100%;
+    }
+
+    .intro_wrapper {
+        padding: 5%;
+        margin-bottom: 0;
+    }
+
+    .intro_wrapper:hover {
+        transform: none;
+        margin-bottom: 0vh;
+    }
+
+    .hover_image_rocket,
+    .hover_image_satel,
+    .hover_image_ship,
+    .div_contact:hover .hover_image_ship,
+    .div_port:hover .hover_image_satel,
+    .div_cohort:hover .hover_image_rocket {
+        display: none; /* Hide animated images on mobile */
+    }
+
+    .div_astronaut {
+        display: none;
+    }
+}
+
+

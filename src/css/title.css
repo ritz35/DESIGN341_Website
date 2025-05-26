@@ -73,10 +73,37 @@
     margin-bottom: 5vh;
     margin-left: 20%;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px){
+    .title{
+        margin-bottom: 1%;
+    }
+    .title_wrapper{
+        /* margin-top: 15%; */
+    }
     .asset_tagline {
+        margin-top: 1%;
+        max-width: 300px;
+        margin-bottom: 1vh;
+    }
+    .div_tagline{
+        margin-bottom: 0;
+        max-width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .title{
+        margin-bottom: 1%;
+    }
+    .title_wrapper{
+        margin-top: 15%;
+    }
+    .asset_tagline {
+        margin-top: -100px;
         max-width: 250px;
         margin-bottom: 1vh;
     }
+    .div_tagline{
+        margin-bottom: 0;
+        max-width: 50%;
+    }
 }
-
