@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import titleLogoWhite from '../assets/title_white.svg'
 import bottombar from '../assets/bottombar_blue.svg'
 import blue_globe from '../assets/blue_globe.svg'

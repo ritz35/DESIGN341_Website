@@ -3,7 +3,6 @@
     grid-template-rows: auto auto;
     /* border: 3px solid red; */
 }
-
 .title{
     width: 100vw;             /*Full width of the screen */
     display: flex;               /* Flex container */
@@ -12,8 +11,21 @@
     padding: 1rem 0;             /* Top and bottom padding */
     box-sizing: border-box;      /* Include padding in width */
     margin-bottom: 3%;
-}
 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.title:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    filter: drop-shadow(0 0 2em #00C3FF);
+}
+.title:hover .asset_blueglobe {
+    animation: spin 1.5s linear infinite; /* Fast spin */
+}
+.asset_title{
+    height: 5.4vw;
+    position: relative;
+    z-index: 1;
+}
 .asset_title_hollow {
     position: absolute;
     top: 0;
@@ -36,6 +48,7 @@
     pointer-events: none;
 
     animation: spin 10s linear infinite; /* <== this spins it */
+    transition: animation 0.3s ease;
 }
 /*getting the globe to spin*/
 @keyframes spin{
@@ -51,14 +64,6 @@
     /* border:3px purple solid; */
     margin-left: 20%;
     margin-right: 20%;
-}
-.asset_title{
-    height: 5.4vw;
-    position: relative;
-    z-index: 1;
-}
-.title_name:hover{
-    filter: drop-shadow(0 0 2em #00C3FF);
 }
 
 .asset_tagline {
