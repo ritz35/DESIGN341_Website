@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../components/seachbar"
 import '../css/cohort.css'
@@ -19,6 +19,11 @@ function Cohort(){
     const [loadingProgress, setLoadingProgress] = useState(0);
     //resetting the fill animation
     const [loadingAnimKey, setLoadingAnimKey] = useState(0);
+    //To store the delay timer
+    const hoverDelayTimeout = useRef(null);
+    const loadingInterval = useRef(null);
+    const popupTimeout = useRef(null);
+
 
     useEffect(() => {
       if (isLoading) {
@@ -34,44 +39,68 @@ function Cohort(){
             .catch(error => console.error("error in cohort page loading the students data: ", error));
     }, []);
 
-    /*when the mouse enters the card, it will show the pop up */
-    const handleMouseEnter = (student, event) => {
-        //if loading animation is playing, then skip
-        if(isLoading) return;
 
-        const rect = event.currentTarget.getBoundingClientRect();
-        setCardRect(rect);
-        setSelectedCard({ student, rect: rect});
+const handleMouseEnter = (student, event) => {
+    if (isLoading) return;
 
-        //making the loading bar show up
-        setIsLoading(true);
+    if (hoverDelayTimeout.current) {
+      clearTimeout(hoverDelayTimeout.current);
+    }
+    if (loadingInterval.current) {
+      clearInterval(loadingInterval.current);
+      loadingInterval.current = null;
+    }
+    if (popupTimeout.current) {
+      clearTimeout(popupTimeout.current);
+      popupTimeout.current = null;
+    }
 
-        /* THE NUMBER INCREMENTALLING */
-        //resetting it each time
-        setLoadingProgress(0);
+    const rect = event.currentTarget.getBoundingClientRect();
+    setCardRect(rect);
+    setSelectedCard({ student, rect: rect });
 
-        setTimeout(() => {
-            let progress = 0;
-            const interval = setInterval(() => {
-                progress += 1;
-                setLoadingProgress(progress);
-                if(progress >= 99){
-                    clearInterval(interval);
-                };
-            }); //adjusting speed
+    hoverDelayTimeout.current = setTimeout(() => {
+      setIsLoading(true);
+      setLoadingProgress(0);
 
-            //the timeout for when the pop up will happen
-            setTimeout(() => {
-                //the pop up is the student hovered
-                setHoveredStudent(student);
-                //removes the loading bar
-                setIsLoading(false);
-            }, 2000); // Delay after bar animation
-        }, 800);
-    };
+      setTimeout(() => {
+        let progress = 0;
+        loadingInterval.current = setInterval(() => {
+          progress += 1;
+          setLoadingProgress(progress);
+          if (progress >= 99) {
+            clearInterval(loadingInterval.current);
+            loadingInterval.current = null;
+          }
+        }); // Add interval delay (e.g., 30ms)
+      }, 600);
+
+      popupTimeout.current = setTimeout(() => {
+        setHoveredStudent(student);
+        setIsLoading(false);
+        loadingInterval.current && clearInterval(loadingInterval.current);
+        loadingInterval.current = null;
+        popupTimeout.current = null;
+      }, 3000);
+    }, 2000);
+};  
 
     /*when the mouse leaves the pop up, or on close, it will close the pop up */
     const handleMouseLeave = () => {
+        // Clear delay timer if mouse leaves early
+        if (hoverDelayTimeout.current) {
+          clearTimeout(hoverDelayTimeout.current);
+          hoverDelayTimeout.current = null;
+        }
+        if (loadingInterval.current) {
+          clearInterval(loadingInterval.current);
+          loadingInterval.current = null;
+        }
+        if (popupTimeout.current) {
+          clearTimeout(popupTimeout.current);
+          popupTimeout.current = null;
+        }
+        setIsLoading(false);
         setHoveredStudent(null);
     };
 
@@ -124,6 +153,7 @@ function Cohort(){
                             className={`student_card ${isClosing ? "closing" : ""}`}
                             key={student.id}
                             onMouseEnter={(e) => handleMouseEnter(student, e)}
+                            onMouseLeave={handleMouseLeave}
                             >
                             <img src={student.image} alt={student.name} className="student_image" />
                             <h2>{student.name}</h2>

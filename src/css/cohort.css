@@ -60,10 +60,28 @@
   z-index: 1;
 }
 
-/* .student_card:hover {
+.student_card:hover {
   transform: translateY(-5px);
-  border-color: #3ec7f4;
-} */
+  /* border-color: #3ec7f4; */
+}
+
+.student_card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Start with zero height */
+  background-color: rgba(62, 199, 244, 0.3); /* Light blue fill */
+  border-radius: 1rem;
+  transition: height 2s ease; /* Duration of fill animation */
+  z-index: -1000; /* Behind the content */
+}
+
+.student_card:hover::before {
+  height: 100%; /* Fill the entire card */
+}
+
 
 .student_image {
   width: 100%;
@@ -287,5 +305,14 @@
   .cohort_heading{
     /* border: 3px solid red; */
   }
+  .student_card:hover {
+    /* margin-top: 10rem;
+    margin-bottom: 10rem; */
+  }
+  .student_card.closing_placeholder {
+  height: 300px; /* or whatever your card's height is */
+  padding: 2rem;
+  margin-left: 2rem;
+}
   
 }
