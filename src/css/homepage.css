@@ -51,7 +51,7 @@
 }
 
 .intro_wrapper{
-    border: 3px solid #3ec7f4;
+    border: 3px solid white;
     padding: 10%;
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
